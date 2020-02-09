@@ -1,0 +1,23 @@
+﻿@charset "utf-8";
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: -moz-linear-gradient(right,#ffe3d3,#fcefef);
+    background: -webkit-gradient(linear,right,right buttom,color-stop(#ffe3d3),color-stop(#fcefef));
+    background: -webkit-linear-gradient(right,#ffe3d3,#fcefef);
+    background: -o-linear-gradient(right,#ffe3d3,#fcefef);
+}
+select {
+    color: #710000;
+    border-radius: 10px 0px;
+    background: linear-gradient(to right,#0b08dd,#990505);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.type {
+    color:chocolate;
+    text-align:center;
+    width:200px;
+    height:30px;
+    border-radius: 10px 0px;
+}

@@ -1,0 +1,80 @@
+﻿@charset "utf-8";
+.bluered {
+    color: #d000ff;
+    border-radius: 10px 0px;
+    background: linear-gradient(to right,#90a3f9,#ff9292);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.purplebule {
+    color: #0014f9;
+    border-radius: 10px 0px;
+    background: linear-gradient(to right,#e492fc,#55b7f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.yellowblue {
+    color: #05510c;
+    border-radius: 10px 0px;
+    background: linear-gradient(to right,#3cbaed,#ef9341);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.redgrey {
+    color: #353336;
+    border-radius: 10px 0px;
+    background: linear-gradient(to right,#f28181,#a0a0a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.marcon {
+    color: #7100fc;
+    border-radius: 10px 0px;
+    background: linear-gradient(to right,#ff8686,#00c8e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.lightRB {
+    color: #7d0000;
+    border-radius: 10px 0px;
+    background: linear-gradient(to right,#a5f7e8,#fc9cc5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.textYR {
+    color: #663004;
+    border-radius: 10px 0px;
+    background: linear-gradient(to right,#ffc639,#fbaaaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.lightBR {
+    color: #b2b2b2;
+    border-radius: 10px 0px;
+    background: linear-gradient(to right,#fbf0ca,#ff9292);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.normaltype {
+    font-style: italic;
+    color:#4f0000;
+}
+    @-webkit-keyframes changetext {
+        0% {
+            box-shadow: 0px 0px 0px #fcdb91;
+        }
+
+        100% {
+            box-shadow: 6px 6px 6px #ff8d00;
+        }
+    }
+
+    @-webkit-keyframes changeback {
+        0% {
+            box-shadow: 6px 6px 6px #ff8d00;
+        }
+
+        100% {
+            box-shadow: 0px 0px 0px #fcdb91;
+        }
+    }

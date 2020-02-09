@@ -1,0 +1,25 @@
+﻿@charset "utf-8";
+
+.button {
+    text-align: center;
+    color:#b96a00;
+    background: linear-gradient(135deg, #fdcb7a, #f9aafc);
+}
+    .button:hover {
+        -webkit-animation-name: ensure; /*动画名称*/
+        -webkit-animation-duration: 0.5s; /*动画持续时间*/
+        -webkit-animation-iteration-count: 1; /*动画次数 infinite 为无限 否则就是具体次数*/
+        -webkit-animation-delay: 0s; /*延迟时间*/
+        -webkit-animation-fill-mode:forwards;
+    }
+@-webkit-keyframes ensure {
+    0% {
+        background: linear-gradient(135deg, #fdcb7a, #f9aafc);
+        box-shadow: 0px 0px 0px #fcdb91;
+    }
+    100% {
+        background: linear-gradient(135deg, #ffa85a, #d962ff);
+        box-shadow: 6px 6px 5px #ff8d00;
+    }
+}
+

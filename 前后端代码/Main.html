@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Handle Option</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--收藏夹显示图标-->
+    <link rel="shortcut icon" href="/Icon/titlelead.ico" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/sroundtypeformal.css" />
+    <link rel="stylesheet" type="text/css" href="/css/buttonup.css" />
+    <link rel="stylesheet" type="text/css" href="/css/filterin.css" />
+    <link rel="stylesheet" type="text/css" href="/css/gradient_typeface.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-grid.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-reboot.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/css/class.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/fontstyles.css" />
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+    <link rel="shortcut icon" href="/icon/manage.png" type="image/x-icon" />
+    <link rel="icon" href="/icon/manage.png" type="image/x-icon" />
+    <style type="text/css">
+        body, html {
+            margin: 0 auto;
+        }
+
+        .adjust {
+            margin: 0 auto;
+            width: 40%;
+        }
+
+        div.foo {
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .letter {
+            display: inline-block;
+            font-weight: 900;
+            font-size: 8em;
+            margin: 0.2em;
+            position: relative;
+            color: #00B4F1;
+            transform-style: preserve-3d;
+            perspective: 400;
+            z-index: 1;
+        }
+
+            .letter:before, .letter:after {
+                position: absolute;
+                content: attr(data-letter);
+                transform-origin: top left;
+                top: 0;
+                left: 0;
+            }
+
+            .letter, .letter:before, .letter:after {
+                transition: all 0.3s ease-in-out;
+            }
+
+                .letter:before {
+                    color: #fff;
+                    text-shadow: -1px 0px 1px rgba(255,255,255,.8), 1px 0px 1px rgba(0,0,0,.8);
+                    z-index: 3;
+                    transform: rotateX(0deg) rotateY(-15deg) rotateZ(0deg);
+                }
+
+                .letter:after {
+                    color: rgba(0,0,0,.11);
+                    z-index: 2;
+                    transform: scale(1.08,1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg,1deg);
+                }
+
+                .letter:hover:before {
+                    color: #fafafa;
+                    transform: rotateX(0deg) rotateY(-40deg) rotateZ(0deg);
+                }
+
+                .letter:hover:after {
+                    transform: scale(1.08,1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(0deg,22deg);
+                }
+
+        #area-render {
+            height: 100%;
+            width: 100%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body style="overflow-x: hidden">
+    <div class="into">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center">
+                    <div class="foo" style="font-size: 10px">
+                        <span class="letter" data-letter="O">O</span>
+                        <span class="letter" data-letter="P">P</span>
+                        <span class="letter" data-letter="T">T</span>
+                        <span class="letter" data-letter="I">I</span>
+                        <span class="letter" data-letter="O">O</span>
+                        <span class="letter" data-letter="N">N</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center">
+                    <div class="round" style="width: 100px; height: 100px; top: 10%; left: 5%; text-align: center; z-index: 9999" id="register">
+                        <label style="position: relative; top: 7%; bottom: 10%; font-size: 25px; margin: 10% 10% 10% 10%; color: chocolate">New User</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="text-align: center">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <table id="show" style="text-align: center" class="w-100">
+                        <tr>
+                            <td>
+                                <div class="foo shadow" style="font-size: 4px">
+                                    <span class="letter" data-letter="N">N</span>
+                                    <span class="letter" data-letter="A">A</span>
+                                    <span class="letter" data-letter="M">M</span>
+                                    <span class="letter" data-letter="E">E</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="foo shadow" style="font-size: 4px">
+                                    <span class="letter" data-letter="P">P</span>
+                                    <span class="letter" data-letter="A">A</span>
+                                    <span class="letter" data-letter="S">S</span>
+                                    <span class="letter" data-letter="S">S</span>
+                                    <span class="letter" data-letter="W">W</span>
+                                    <span class="letter" data-letter="O">O</span>
+                                    <span class="letter" data-letter="R">R</span>
+                                    <span class="letter" data-letter="D">D</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="foo shadow" style="font-size: 4px">
+                                    <span class="letter" data-letter="R">R</span>
+                                    <span class="letter" data-letter="A">A</span>
+                                    <span class="letter" data-letter="N">N</span>
+                                    <span class="letter" data-letter="K">K</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="foo shadow" style="font-size: 4px">
+                                    <span class="letter" data-letter="O">O</span>
+                                    <span class="letter" data-letter="P">P</span>
+                                    <span class="letter" data-letter="T">T</span>
+                                    <span class="letter" data-letter="I">I</span>
+                                    <span class="letter" data-letter="O">O</span>
+                                    <span class="letter" data-letter="N">N</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="blocked">
+                            <td>
+                                <br />
+                            </td>
+                            <td>
+                                <br />
+                            </td>
+                            <td>
+                                <br />
+                            </td>
+                            <td>
+                                <br />
+                            </td>
+
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div>
+        </div>
+        <div class="row">
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+    </div>
+    <script type="text/javascript" src="javascript/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="javascript/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="javascript/bootstrap.js"></script>
+    <script type="text/javascript" src="javascript/modernizr.js"></script>
+    <script type="text/javascript" src="javascript/prefixfree.min.js"></script>
+    <script>
+
+        var database;
+        $("#modify").click(function () {
+            window.location = "modify.html";
+        });
+        $("#register").click(function () {
+            window.location = "register.html";
+        });
+        var data;
+        window.onload = function () {
+            $.ajax({
+                url: "http://localhost:8080/users/",
+                type: "GET",
+                dataType: "json",
+                success: function (database) {
+                    data = database;
+                    var table = document.getElementById("show");
+                    for (i in data) {
+                        var tr = document.createElement('tr');
+                        tr.setAttribute("onclick", "userlist(" + i + ")");
+                        tr.setAttribute("id", "tr" + i);
+                        var temp = data[i];
+                        for (var j in temp) {
+                            if (j != "userId") {
+                                var td = document.createElement('td');
+                                tr.appendChild(td);
+                                td.setAttribute("class", "normaltype");
+                                td.innerHTML = temp[j];
+                                //$("#modify" + temp.userId).click(function () { window.location = "modify.html?pastuserName=" + temp.userName + "&pastpassword=" + temp.password + "&pastuserId=" + temp.userId + "&pastuserRank=" + temp.userRank; });
+                            }
+                        }
+                        var tde = document.createElement('td');
+                        tr.appendChild(tde);
+                        tde.innerHTML = "<button style=\"width: 17 %; font - size: 20px; text - align: center;border-radius:  20px 20px 20px 20px;\" class=\"button linkway\" onclick=\"handle(event,"
+                            + i
+                            + ")\" id=\"modify" + i + "\">modify</button>"
+                            + "&nbsp;&nbsp;&nbsp;&nbsp;"
+                            + "<button style=\"width: 17 %; font - size: 20px; text - align: center; border-radius: 20px 20px 20px 20px;\" class=\"button linkway\" onclick=\"deletelist(event,"
+                            + i
+                            + ")\" id =\"delete" + i + "\">delete</button>";
+                        table.appendChild(tr);
+                    }
+                    var trlist = document.getElementsByTagName("tr");
+                    for (k = 2; k < trlist.length; k++) { trlist[k].setAttribute("class", "shadowing rentacle"); }
+                },
+                error: function (e) {
+                    alert("ERROR TO CONNECT");
+                }
+            });
+        }
+        function userlist(i) {
+            window.location = "history.html?userName=" + data[i].userName;
+        }
+        function handle(ev, i) {
+            ev.stopPropagation();
+            window.location = "modify.html?"
+                + "pastuserName=" + data[i].userName
+                + "&pastpassword=" + data[i].password
+                + "&pastuserId=" + data[i].userId
+                + "&pastuserRank=" + data[i].userRank;
+        }
+        function deletelist(ev, i) {
+            ev.stopPropagation();
+            var confirmword = confirm("Do you want to delete it?");
+            if (confirmword == true) {
+                $.ajax({
+                    url: "http://localhost:8080/users/" + data[i].userName,
+                    type: "delete",
+                    dataType: "json",
+                    async: false,
+                    success: function (tag) {
+                        if (tag.success) {
+                            alert("Delete done");
+                            document.getElementById("tr" + i).style.display = "none";
+                            /*var deletedone = document.getElementById("delete" + i);
+                            deletedone.setAttribute("class", "");
+                            deletedone.setAttribute("color", "black");
+                            deletedone.setAttribute("backgroundcolor", "grey");*/
+                        }
+                    },
+                    error: function (e) {
+                        alert("ERROR TO CONNECT");
+                    }
+                });
+            }
+            else { }
+        }
+        /*$("#dd").click(function () {
+                        for (var i = 0, l = data.length; i < l; i++) {
+                            $("#modify" + i).click(function () {
+                                alert(i);
+                                // window.location = "modify.html?pastuserName=" + i + "&pastpassword=" + i + "&pastuserId=" + i + "&pastuserRank=" + i;
+                            });
+                        }});*/
+
+    </script>
+</body>
+</html>

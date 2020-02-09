@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Manager on board</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--收藏夹显示图标-->
+    <link rel="shortcut icon" href="/Icon/titlelead.ico" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/sroundtypeformal.css" />
+    <link rel="stylesheet" type="text/css" href="/css/buttonup.css" />
+    <link rel="stylesheet" type="text/css" href="/css/filterin.css" />
+    <link rel="stylesheet" type="text/css" href="/css/gradient_typeface.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-grid.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-reboot.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/css/class.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/fontstyles.css" />
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+    <link rel="shortcut icon" href="/icon/login.png" type="image/x-icon" />
+    <link rel="icon" href="/icon/login.png" type="image/x-icon" />
+    <style type="text/css">
+        body, html {
+            margin: 0 auto;
+        }
+
+        .adjust {
+            margin: 0 auto;
+            width: 40%;
+        }
+
+        div.foo {
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .letter {
+            display: inline-block;
+            font-weight: 900;
+            font-size: 8em;
+            margin: 0.2em;
+            position: relative;
+            color: #00B4F1;
+            transform-style: preserve-3d;
+            perspective: 400;
+            z-index: 1;
+        }
+
+            .letter:before, .letter:after {
+                position: absolute;
+                content: attr(data-letter);
+                transform-origin: top left;
+                top: 0;
+                left: 0;
+            }
+
+            .letter, .letter:before, .letter:after {
+                transition: all 0.3s ease-in-out;
+            }
+
+                .letter:before {
+                    color: #fff;
+                    text-shadow: -1px 0px 1px rgba(255,255,255,.8), 1px 0px 1px rgba(0,0,0,.8);
+                    z-index: 3;
+                    transform: rotateX(0deg) rotateY(-15deg) rotateZ(0deg);
+                }
+
+                .letter:after {
+                    color: rgba(0,0,0,.11);
+                    z-index: 2;
+                    transform: scale(1.08,1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg,1deg);
+                }
+
+                .letter:hover:before {
+                    color: #fafafa;
+                    transform: rotateX(0deg) rotateY(-40deg) rotateZ(0deg);
+                }
+
+                .letter:hover:after {
+                    transform: scale(1.08,1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(0deg,22deg);
+                }
+
+        #area-render {
+            width: 100%;
+            height: 100%;
+            position: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="area-render" style="align-self: auto; text-align: right">
+        <script type="text/javascript" src="/javascript/canvas-nest.umd.js"></script>
+        <div class="into">
+            <table style="width: 100%; text-align: center; position: inherit">
+                <tr style="text-align: center">
+                    <td style="text-align: center">
+                        <div class="foo" style="font-size: 10px">
+                            <span class="letter" data-letter="L">L</span>
+                            <span class="letter" data-letter="O">O</span>
+                            <span class="letter" data-letter="G">G</span>
+                            <span class="letter" data-letter="I">I</span>
+                            <span class="letter" data-letter="N">N</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr style="text-align: center">
+                    <td style="text-align: center">
+                        <br />
+                        <div class="adjust">
+                            <h2 style="font-size: 20px; text-align: center" id="userinfo" class="yellowblue floaton linkway">UserAccount</h2>
+                        </div>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">
+                        <input type="text" style="text-align: center; width: 200px; height: 25px" class="type" id="user" name="userName" onkeyup="this.value=this.value.replace(/\s+/g,'')" maxlength="15" />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">
+                        <div class="adjust">
+                            <h2 style="font-size: 20px; text-align: center;" id="passwordinfo" class="yellowblue floaton linkway">UserPassword</h2>
+                        </div>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">
+                        <input type="password" style="text-align: center; width: 200px; height: 25px" class="type" id="password" name="password" onkeyup="this.value=this.value.replace(/\s+/g,'')" maxlength="15" />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">
+                        <br />
+                        <button style="width:20%;font-size: 20px; text-align: center" class="button linkway" id="ensure">Sign in</button>
+                        <!--&nbsp;&nbsp;&nbsp;
+                        <button style="width:20%;font-size: 20px; text-align: center" class="button linkway" id="register">Sign up</button>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                        <br />
+                       <footer class="footer" style="z-index: -1">
+                            <address style="text-align: center; font-size: 25px;">chutney cooperation league powered by Deng Gu Ma (number order)</address>
+                        </footer>
+                    </td>
+                </tr>
+            </table>
+            <div style="position: absolute; top: 20%; left: 10%; visibility: hidden" class="error">
+                <div class="into">
+                    <div class="loader font1">
+                        <span class="span2" style="color: #f12d2d">E</span>
+                        <span class="span3" style="color: #fc7b45">R</span>
+                        <span class="span4" style="color: #40086d">R</span>
+                        <span class="span5" style="color: #9efd7c">O</span>
+                        <span class="span6" style="color: #e9cf0f">R</span>
+                    </div>
+
+                    <div class="loader font2">
+                        <span class="span2" style="color: #620303">C</span>
+                        <span class="span3">A</span>
+                        <span class="span4">N'</span>
+                        <span class="span5">T</span>
+                    </div>
+
+                    <div class="loader font3">
+                        <span class="span2" style="color: #2c059b">L</span>
+                        <span class="span3" style="color: #40086d">O</span>
+                        <span class="span4">A</span>
+                        <span class="span5">D</span>
+                        <span class="span6">~</span>
+                        <span class="span7">~</span>
+                    </div>
+
+                    <div class="loader font4">
+                        <span style="color: #0f22f6">N</span>
+                        <span class="span2" style="color: #3005ed">O</span>
+                        <span class="span3">~</span>
+                        <span class="span4" style="color: #9020fd">L</span>
+                        <span class="span5">O</span>
+                        <span class="span6">A</span>
+                        <span class="span7">D</span>
+                    </div>
+                </div>
+            </div>
+            <div style="position: absolute; top: 20%; right: 10%; visibility: hidden" class="error">
+                <div class="into">
+                    <div class="loader font1">
+                        <span class="span2" style="color: #f12d2d">E</span>
+                        <span class="span3" style="color: #fc7b45">R</span>
+                        <span class="span4" style="color: #40086d">R</span>
+                        <span class="span5" style="color: #9efd7c">O</span>
+                        <span class="span6" style="color: #e9cf0f">R</span>
+                    </div>
+
+                    <div class="loader font2">
+                        <span class="span2" style="color: #620303">C</span>
+                        <span class="span3">A</span>
+                        <span class="span4">N'</span>
+                        <span class="span5">T</span>
+                    </div>
+
+                    <div class="loader font3">
+                        <span class="span2" style="color: #2c059b">L</span>
+                        <span class="span3" style="color: #40086d">O</span>
+                        <span class="span4">A</span>
+                        <span class="span5">D</span>
+                        <span class="span6">~</span>
+                        <span class="span7">~</span>
+                    </div>
+
+                    <div class="loader font4">
+                        <span style="color: #0f22f6">N</span>
+                        <span class="span2" style="color: #3005ed">O</span>
+                        <span class="span3">~</span>
+                        <span class="span4" style="color: #9020fd">L</span>
+                        <span class="span5">O</span>
+                        <span class="span6">A</span>
+                        <span class="span7">D</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="/javascript/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="/javascript/bootstrap.bundle.js"></script>
+        <script type="text/javascript" src="/javascript/bootstrap.js"></script>
+        <script type="text/javascript" src="/javascript/modernizr.js"></script>
+        <script type="text/javascript" src="/javascript/prefixfree.min.js"></script>
+        <script type="text/javascript">
+            var cn = new CanvasNest(document.getElementById('area-render'), {
+                color: '248,180,159',//颜色
+                count: 50,//数量
+                opacity: 1,//透明度0到1
+                zIndex: 1,//图层，1表示在表面
+            });
+            var user = document.getElementById("user");
+            var password = document.getElementById("password");
+            var userinfo = document.getElementById("userinfo");
+            var passwordfinfo = document.getElementById("passwordinfo");
+
+            password.onfocus = function () {
+                passwordfinfo.innerText = "Please ensure the password";
+                document.getElementsByClassName('error')[0].style.visibility = 'hidden';
+                document.getElementsByClassName('error')[1].style.visibility = 'hidden';
+            }
+            user.onfocus = function () {
+                userinfo.innerText = "Please ensure the account ";
+                document.getElementsByClassName('error')[0].style.visibility = 'hidden';
+                document.getElementsByClassName('error')[1].style.visibility = 'hidden';
+            }
+            $("#ensure").click(function () {
+                if (check() == true) {
+                    $.ajax({
+                        url: "http://localhost:8080/login",
+                        type: "POST",
+                        dataType: "json",
+                        data: {
+                            userName: user.value,
+                            password: password.value
+
+                        },
+                        success: function (str) {
+                            if (str.success) {
+                                window.location = "Main.html";
+                            }
+                            else if (str.success == false) {
+                                document.getElementsByClassName('error')[1].style.visibility = 'visible';
+                                document.getElementsByClassName('error')[0].style.visibility = 'visible';
+                                //错误
+                            }
+                        },
+                        error: function (e) {
+                            alert("ERROR TO CONNECT");
+                        }
+                    });
+                }
+                else { }
+            });
+            function check() {
+                var user = document.getElementById("user");
+                var password = document.getElementById("password");
+                //  var reg = /^\d+$/;//判断是否为纯数字
+                if (user.value == "" || password.value == "") {
+                    if (user.value == "") {
+                        var warn = document.getElementById("userinfo");
+                        warn.innerText = "Account is not allowed to be null！";
+                        warn.style.animationName = 'into';
+                        warn.style.animationDuration = '1s';
+                        warn.style.animationIterationCount = '1';
+                        warn.style.animationDelay = '0';
+                        warn.style.animationFillMode = "forwards";
+                    }
+                    if (password.value == "") {
+                        var code = document.getElementById("passwordinfo");
+                        code.innerText = "password can not be null！";
+                        code.style.animationName = 'into';
+                        code.style.animationDuration = '0.5s';
+                        code.style.animationIterationCount = '1';
+                        code.style.animationDelay = '0';
+                        code.style.animationFillMode = "forwards";
+                    }
+                    return false;
+                }//按下按钮的时候，进行检测，是否是空的用户账号或者密码
+                else {
+                    return true;
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

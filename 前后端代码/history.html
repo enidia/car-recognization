@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>User History</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--收藏夹显示图标-->
+    <link rel="shortcut icon" href="/Icon/titlelead.ico" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/sroundtypeformal.css" />
+    <link rel="stylesheet" type="text/css" href="/css/buttonup.css" />
+    <link rel="stylesheet" type="text/css" href="/css/filterin.css" />
+    <link rel="stylesheet" type="text/css" href="/css/gradient_typeface.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-grid.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-reboot.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/css/class.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/fontstyles.css" />
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+    <link rel="shortcut icon" href="/icon/history.png" type="image/x-icon" />
+    <link rel="icon" href="/icon/history.png" type="image/x-icon" />
+    <style type="text/css">
+        body, html {
+            margin: 0 auto;
+        }
+
+        .adjust {
+            margin: 0 auto;
+            width: 40%;
+        }
+
+        div.foo {
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .letter {
+            display: inline-block;
+            font-weight: 900;
+            font-size: 8em;
+            margin: 0.2em;
+            position: relative;
+            color: #00B4F1;
+            transform-style: preserve-3d;
+            perspective: 400;
+            z-index: 1;
+        }
+
+            .letter:before, .letter:after {
+                position: absolute;
+                content: attr(data-letter);
+                transform-origin: top left;
+                top: 0;
+                left: 0;
+            }
+
+            .letter, .letter:before, .letter:after {
+                transition: all 0.3s ease-in-out;
+            }
+
+                .letter:before {
+                    color: #fff;
+                    text-shadow: -1px 0px 1px rgba(255,255,255,.8), 1px 0px 1px rgba(0,0,0,.8);
+                    z-index: 3;
+                    transform: rotateX(0deg) rotateY(-15deg) rotateZ(0deg);
+                }
+
+                .letter:after {
+                    color: rgba(0,0,0,.11);
+                    z-index: 2;
+                    transform: scale(1.08,1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg,1deg);
+                }
+
+                .letter:hover:before {
+                    color: #fafafa;
+                    transform: rotateX(0deg) rotateY(-40deg) rotateZ(0deg);
+                }
+
+                .letter:hover:after {
+                    transform: scale(1.08,1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(0deg,22deg);
+                }
+
+        #area-render {
+            width: 100%;
+            height: 100%;
+            position: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="into">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="round" style="width: 80px; height: 80px; top: 5%; left: 5%; text-align: center; z-index: 9999" id="main">
+                    <label style="position: relative; top: 7%; bottom: 10%; font-size: 25px; margin: 10% 10% 10% 10%; color: chocolate">Back</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center">
+                    <div class="foo" style="font-size: 10px">
+                        <span class="letter" data-letter="H">H</span>
+                        <span class="letter" data-letter="I">I</span>
+                        <span class="letter" data-letter="S">S</span>
+                        <span class="letter" data-letter="T">T</span>
+                        <span class="letter" data-letter="O">O</span>
+                        <span class="letter" data-letter="R">R</span>
+                        <span class="letter" data-letter="Y">Y</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center">
+                    <div class="foo" id="usernameli" style="font-size: 5px">
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center center" id="history" style="text-align: center; width: 90%; margin: 0 auto;">
+            </div>
+            <div class="row">
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/javascript/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/javascript/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="/javascript/bootstrap.js"></script>
+    <script type="text/javascript" src="/javascript/modernizr.js"></script>
+    <script type="text/javascript" src="/javascript/prefixfree.min.js"></script>
+    <script>
+        var userstring = " <span class=\"letter\" data-letter=\"Hello:\">Hello:</span>";
+        var datalist;
+        var username;
+        function GetRequest() {
+            var url = location.search;//获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }//成功获取多条参数键值对
+            return theRequest;
+        }
+        function findusername(username) {
+            var words = username.split("");
+            for (i in words) {
+                userstring = userstring + "<span class=\"letter\" data-letter=\"" + words[i] + "\">" + words[i] + "</span>";
+            }
+        }
+        window.onload = function () {
+            var request = new Object();
+            request = GetRequest();
+            username = request['userName'];
+            findusername(username);
+            $.ajax({
+                url: "http://localhost:8080/history/" + username,
+                type: "GET",
+                dataType: "json",
+                data: {
+                    userName: username
+                },
+                success: function (tag) {
+                    datalist = tag;
+                    handdata();
+                },
+                error: function (e) {
+                    alert("ERROR TO CONNECT");
+                }
+            });
+            var usernameli = document.getElementById("usernameli");
+            usernameli.innerHTML = userstring;
+        }
+        function handdata() {
+        
+        if(JSON.stringify(datalist)=="[]"){
+        var schema = document.getElementById("history");
+        var divnull = document.createElement('div');
+        schema.appendChild(divnull);
+        divnull.innerHTML = "Not Data";
+        divnull.setAttribute("class","bluered floaton");
+        divnull.setAttribute("style","font-size:40px;");
+        }
+        else{
+            for (i in datalist) {
+                var schema = document.getElementById("history");
+                var div = document.createElement('div');
+                div.setAttribute("class", "shadowing shadow rentacle col-12 col-sm-6 col-md-4 col-lg-2 normaltype");
+                div.setAttribute("style", "margin: 25px");
+                div.setAttribute("id", "div" + i);
+                var temp = datalist[i];
+                for (var j in temp) {
+                    if (j == "imageUrl") {
+                        var indiv = document.createElement('div');
+                        div.appendChild(indiv);
+                        var img = document.createElement("img");
+                        indiv.appendChild(img);
+                        indiv.setAttribute("style", "max-height:120px;max-width:150px;text-align:center");
+                        indiv.setAttribute("class","justify-content-center");
+                        img.setAttribute("src", "http://localhost:8080/download/" + temp[j]);
+                        img.setAttribute("style", "object-fit:cover;max-height:100%;max-width:100%;overflow:hidden");
+                        img.setAttribute("class", "simpleinput");
+                    }
+                    if (j == "result") {
+                        var list = document.createElement('div');
+                        div.appendChild(list);
+                        var title = document.createElement('div');
+                        list.appendChild(title);
+                        title.setAttribute("class", "bluered");
+                        var indiv = document.createElement('div');
+                        list.appendChild(indiv);
+                        title.innerHTML = "License plate: ";
+                        indiv.innerHTML = temp[j];
+                        //$("#modify" + temp.userId).click(function () { window.location = "modify.html?pastuserName=" + temp.userName + "&pastpassword=" + temp.password + "&pastuserId=" + temp.userId + "&pastuserRank=" + temp.userRank; });
+                    }
+                    if (j == "identifyDate") {
+                        var list = document.createElement('div');
+                        div.appendChild(list);
+                        var title = document.createElement('div');
+                        list.appendChild(title);
+                        title.setAttribute("class", "redgrey");
+                        var indiv = document.createElement('div');
+                        list.appendChild(indiv);
+                        title.innerHTML = "Time:";
+                        indiv.innerHTML = temp[j];
+                    }
+                }
+                var ibuttondiv = document.createElement('div');
+                div.appendChild(ibuttondiv);
+                ibuttondiv.innerHTML = "<button style=\"width: 70%; font - size: 20px; text - align: center;\" class=\"linkingbutton\" onclick=\"deletelist(event,"
+                    + i
+                    + ")\" id =\"delete" + i + "\">delete</button><br/><br/>";
+                schema.appendChild(div);
+            }
+            }
+        }
+
+        function deletelist(ev, i) {
+            ev.stopPropagation();
+            var confirmword = confirm("Do you want to delete it?");
+            if (confirmword == true) {
+                $.ajax({
+                    url: "http://localhost:8080/history/" + datalist[i].logId,
+                    type: "delete",
+                    dataType: "json",
+                    async: false,
+                    success: function (tag) {
+                        if (tag.success) {
+                            alert("Delete done");
+                            document.getElementById("div" + i).style.display = "none";
+                        }
+                    },
+                    error: function (e) {
+                        alert("ERROR TO CONNECT");
+                    }
+                });
+            }
+            else { }
+        }
+
+        $("#main").click(function () {
+            window.location = "Main.html";
+        });
+    </script>
+</body>
+</html>

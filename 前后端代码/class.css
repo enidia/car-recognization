@@ -1,0 +1,234 @@
+﻿@charset "utf-8";
+
+.linking {
+    margin:8%;
+    text-decoration: none;
+    border: 2px solid #ff8d00;
+    padding: 0px 6px 6px 0px;
+    text-align: center;
+    color: #b96a00;
+    border-radius: 10px 0px;
+    background: linear-gradient(135deg,#f9aafc, #fcdb91);
+}
+
+    .linking:hover {
+        -webkit-animation-name: anime; /*动画名称*/
+        -webkit-animation-duration: 0.5s; /*动画持续时间*/
+        -webkit-animation-iteration-count: 1; /*动画次数 infinite 为无限 否则就是具体次数*/
+        -webkit-animation-delay: 0s; /*延迟时间*/
+        -webkit-animation-fill-mode: forwards;
+    }
+
+.linkingbutton {
+    text-decoration: none;
+    text-align: center;
+    color: #b96a00;
+    border-radius: 10px 10px 10px 10px;
+    background: linear-gradient(135deg,#f9aafc, #fcdb91);
+    transition: all 1s ease 0s;
+}
+    .linkingbutton:hover {
+        box-shadow: 2px 2px 1px #ff8d00;
+    }
+
+@-webkit-keyframes anime {
+    0% {
+        width: 30%;
+        background: linear-gradient(135deg,#f9aafc,#fdcb7a);
+        box-shadow: 0px 0px 0px #fcdb91;
+    }
+
+    100% {
+        width: 50%;
+        background: linear-gradient(135deg,#d962ff,#ffa85a);
+        box-shadow: 6px 6px 5px #ff8d00;
+    }
+}
+
+#main {
+    transition: all 1s ease 0s;
+}
+
+    #main:hover {
+        transform: scale(1.1,1);
+        box-shadow: 6px 6px 5px #ff8d00;
+    }
+
+.round {
+    position: fixed;
+    background-color: inherit;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 15%;
+    z-index: 0;
+    background: linear-gradient(135deg,#f9aafc,#fdcb7a);
+    box-shadow: 0px 0px 0px #fcdb91;
+    transition: all 1s ease 0s;
+}
+
+    .round:hover {
+        transform: scale(1.1,1.1);
+        box-shadow: 6px 6px 5px #ff8d00;
+    }
+
+.square {
+    position: fixed;
+    background-color: inherit;
+    width: 100px;
+    height: 50px;
+    margin-left: 10%;
+    z-index: 0;
+    background: linear-gradient(135deg,#f9aafc,#ffe3ae);
+    transition: all 1s ease 0s;
+}
+
+    .square:hover {
+        transform: scale(2,3);
+        box-shadow: 6px 6px 5px #ff8d00;
+    }
+
+.squareline {
+    position: fixed;
+    background-color: inherit;
+    width: 100px;
+    height: 50px;
+    margin-left: 20%;
+    z-index: 0;
+    background: linear-gradient(135deg,#f9aafc,#ffe3ae);
+    transition: all 1s ease 0s;
+}
+
+    .squareline:hover {
+        transform: scale(3,1);
+        box-shadow: 6px 6px 5px #ff8d00;
+    }
+.shadow {
+    box-shadow: 6px 6px 5px #ff8d00;
+}
+.footer {
+    margin: 0 auto;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    border-radius: 10px 0px;
+    bottom: 0px;
+    padding: 10px 0;
+    color: #f9be73;
+    background: linear-gradient(135deg,#fcbb99,#e3adfa);
+    text-align: center;
+    text-shadow: 0.1em 0.1em azure;
+    opacity: 0.2;
+}
+
+    .footer:hover {
+        -webkit-animation-name: footer; /*动画名称*/
+        -webkit-animation-duration: 0.7s; /*动画持续时间*/
+        -webkit-animation-iteration-count: 1; /*动画次数 infinite 为无限 否则就是具体次数*/
+        -webkit-animation-delay: 0s; /*延迟时间*/
+        -webkit-animation-fill-mode: forwards; /*保持当前状态*/
+    }
+
+@-webkit-keyframes footer {
+    0% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+        background: linear-gradient(135deg,#f3a1ff,#ffb57a);
+    }
+}
+
+.box {
+    margin-left: 60%;
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    border: 50px solid transparent;
+    border-image: linear-gradient(to top,#fcbb99,#e3adfa);
+    border-bottom: none;
+    transition: all 1s ease 0s;
+}
+
+    .box:hover {
+        transform: rotate(180deg); /*旋转180度*/
+        border-image: linear-gradient(to top,#ff7171,#fbea46)
+    }
+
+.borderbox {
+    margin: 100px;
+    width: 50px;
+    height: 50px;
+    margin-left: 70%;
+    position: fixed;
+    border: 30px solid transparent;
+    border-image: linear-gradient(to top,#fcbb99,#e3adfa);
+    transition: all 2s ease 0s;
+}
+
+    .borderbox:hover {
+        transform: rotate(720deg);
+        border-image: linear-gradient(to right,#ff7356,#faa83f)
+    }
+
+.borderround {
+    border-radius: 10px 10px 10px 10px;
+}
+
+.type {
+    color: chocolate;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px 0px;
+}
+.shadowing {
+    transition: all 0.5s ease 0s
+}
+    .shadowing:hover {
+        transform: scale(1.05,1);
+        box-shadow: 6px 6px 6px 6px #b26018;
+    }
+.floaton {
+    transition: all 1s ease 0s;
+}
+
+    .floaton:hover {
+        transform: scale(1.2,1.1);
+        box-shadow: 6px 6px 5px #c1b6ab;
+    }
+.circle {
+    transition: all 1s ease 0s;
+}
+
+    .circle:hover {
+        transform: rotate(360deg);
+    }
+
+.linkway {
+    transition: all 1s ease 0s;
+}
+
+    .linkway:hover {
+        transform: rotate(5deg);
+        text-shadow: 2px 2px 4px #b3b3b3;
+    }
+
+.pscale {
+    margin:20px;
+    transition: all 1s ease 0s;
+}
+
+    .pscale:hover {
+        transform: scale(1.05,1.05);
+    }
+.simpleinput {
+    margin: 4px;
+    box-shadow: 4px 4px 3px #979797;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.rentacle{
+    border-radius: 10%;
+}
